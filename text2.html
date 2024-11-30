@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0px;
+            align-items: center;
+        }
+.baner
+        {
+            margin: 0 auto;
+            text-align: center;
+            background-color: white      
+         }
+.name
+        {
+            font-size: 60px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            font-family: 'Poppins', sans-serif;
+
+
+        }
+.hotline
+        {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border: 1px;
+            width: 750px;
+            height: 50px;
+            line-height: 25px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px 10px 20px 10px;
+            border-radius: 5px;
+        }
+.menu-web
+        {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(0, 0, 0);
+            margin:0 auto;
+
+        }
+.root li
+        {
+            list-style: none;
+            float: left;
+            position: relative;
+            display: block;
+            font-weight: bold;
+        }
+.root li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 0 25px ;
+            line-height: 50px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+.root li a:hover
+        {
+            background-color: rgb(0, 0, 0);
+            color: orange;
+            transform: ease-in 0.30s;
+        }
+.submenu
+        {
+            display: flex;
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            width:200px ;
+            min-height: 100px;
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            top: 50px;
+            z-index: 10;
+            
+        }
+.submenu li
+        {
+            list-style: none;
+        }
+.submenu li a 
+        {
+            text-decoration: none;
+            color: snow;
+            display: block;
+            text-indent: 10px;
+            line-height: 40px;
+        }
+.root li:hover .submenu{
+            background-color: rgb(0, 0, 0);
+            color: orange;
+            transition: ease-in 0.30s;
+            display: flex;
+            z-index: 10;
+        }
+.submenu li a:hover 
+        {
+            background-color: rgb(0, 0, 0);
+            color: rgb(208, 255, 0);
+            transition: ease-in 0.40s;
+        }
+
+ .submenu1
+        {
+            display: flex;
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            width:130px ;
+            min-height: 100px;
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            top: 50px;
+            z-index: 10;
+            
+        }
+
+.submenu1 li
+        {
+            list-style: none;
+        }
+
+.submenu1 li a 
+        {
+            text-decoration: none;
+            color: snow;
+            display: block;
+            padding-left: 20px;
+            line-height: 40px;
+        }
+
+.root li:hover .submenu1{
+            background-color: rgb(0, 0, 0);
+            color: orange;
+            transition: ease-in 0.30s;
+            display: flex;
+            z-index: 10;
+        }
+         
+.submenu1 li a:hover 
+        {
+            background-color: rgb(0, 0, 0);
+            color: rgb(208, 255, 0);
+            transition: ease-in 0.40s;
+        }
+
+.logo {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    z-index: 1000;
+    margin: 10px;
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+.anh img {
+            width: 300px;
+            height: 100%;
+            margin-right: 20px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 10px;
+        }
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .content {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            background-color: white;
+        }
+
+
+body{
+    height: 100%; 
+    width: 100%; 
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    margin: 0; 
+    padding: 0;
+      font-family: sans-serif;
+      background-color: #ffffff;
+      box-sizing: border-box;
+}
+
+
+img{
+    width: 100%; height: auto;
+}
+
+.grid-container{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px 10px; 
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.location-listing{
+    position: relative;
+}
+
+.location-image{
+    line-height: 0;
+    overflow: hidden;
+}
+
+.location-title{
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .5s, color .3s;
+    background-color: rgba(red, green, blue, alpha);
+    color: gainsboro;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.location-listing img {
+    width: 305px; 
+    height: 450px; 
+    border-radius: 10px; 
+    object-fit: cover; 
+}
+
+.location-listing:hover .location-title{opacity: 1; color: red;}
+.location-listing:hover .location-image img{filter: blur(2px);}
+@media(hover:none){
+    .location-title{opacity: 1;}
+    .location-image img {filter: blur(2px);}
+}
+
+
+.anh {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.sanpham {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #b9b8b8;
+
+    height: 450px;
+}
+
+.sanpham img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.sanpham p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.sanpham p del {
+    color: red; 
+}
+
+.sanpham p b {
+    color: #007bff; 
+}
+        
+
+    </style>
+</head>
+<body>
+    <div class="baner">
+        <marquee>
+           <p class="name"><strong>99 KING BOUTIQUE</strong> </p>
+        </marquee>
+       
+        <p class="hotline"><strong>HOTLINE:0382.947.289 Từ Sơn-Bắc Ninh</strong></p>
+    </div>
+        <div class="menu-web">
+            <div class="menu">
+                <ul class="root">
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Thời Trang Nam</a>
+                        <ul class="submenu">
+                            <li><a href="">Sét bộ</a></li>
+                            <li><a href="">Quần</a></li>
+                            <li><a href="">Áo</a></li>
+                            <li><a href="">Phụ kiện nam</a></li>
+                            <li><a href="">Mũ</a></li>
+                            <li><a href="">Giày, dép</a></li>
+
+                        </ul>
+                    </li>          
+                    <li><a href="">Sản phẩm</a>
+                        <ul class="submenu1"> 
+                         <li><a href="">Áo polo</a></li>
+                         <li><a href="">Áo khoác</a></li>
+                          <li><a href="">Quần vải</a></li>
+                          <li><a href="">Quần bò</a></li>
+                          <li><a href="">Quần đùi</a>
+                        </li>
+                    </ul>  
+                    
+                    <li><a href="">Khuyến mãi</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="">Tìm kiếm</a></li>
+                </ul>
+            </div>
+
+          <div class="logo">
+            <img src="./99_KING_BOUTIQUE-removebg-preview.png" alt="Logo 99 KING BOUTIQUE">
+          </div>
+
+         
+          <div class="location-child">
+            <h2>Our Locations</h2>
+            <div class="grid-container">
+                <article class="location-listing" id="3685">
+                    <a href="#" class="location-title">Tự Do</a>
+                    <img src="./btl1.jpg" alt="San Francisco" width="300" height="170">
+                    
+                </article>
+                <article class="location-listing" id="3685">
+                    <a href="#" class="location-title">Năng Động</a>
+                    <img src="./btl7.jpg" alt="San Francisco" width="300" height="170">
+                    
+                </article>
+                <article class="location-listing" id="3685">
+                    <a href="#" class="location-title">Trẻ Trung</a>
+                    <img src="./btl3.jpg" alt="San Francisco" width="300" height="170">
+                    
+                </article>
+                <article class="location-listing" id="3685">
+                    <a href="#" class="location-title">Lịch Lãm</a>
+                    <img src="./btl4.jpg" alt="San Francisco" width="300" height="170">
+                    
+                </article>
+                <article class="location-listing" id="3685">
+                    <a href="#" class="location-title">Đơn Giản</a>
+                    <img src="./bl8.webp" alt="San Francisco" width="300" height="170">
+                </article> 
+                <article class="location-listing" id="3685">
+                    <a href="#" class="location-title">Văn Phòng</a>
+                    <img src="./btl9.jpg" alt="San Francisco" width="300" height="170">
+                </article>
+    
+            </div>
+        </div>
+
+
+        <div class="anh">
+            <div class="sanpham">
+            <img src="./aokhoac1.jpg" >
+                    <p> <strong>Áo khoác gió Dolce & Gabbana</strong></p>
+                    <p>Giá cũ: <del>590.000 VNĐ</del></p>
+                    <p>Giá mới: <b>499.000 VNĐ</b></p>
+                    <button>Mua Ngay</button>
+                    <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./aokhoac2.jpg" >
+                     <p><strong>Áo khoác gió Dsquared2</strong></p>
+                     <p>Giá cũ: <del>439.000 VNĐ</del></p>
+                     <p>Giá mới: <b>389.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./hoodie1.jpg" >
+                     <p><strong>Áo Hoodie Trùm Đầu Nỉ Nhung Drew</strong></p>
+                     <p>Giá cũ: <del>350.000 VNĐ</del></p>
+                     <p>Giá mới: <b>299.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./hoodie2.jpg" >
+                     <p><strong>Áo Hoodie Trùm Đầu Nỉ Nhung ADLV</strong></p>
+                     <p>Giá cũ: <del>350.000 VNĐ</del></p>
+                     <p>Giá mới: <b>299.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="hoodie3.jpg" >
+                     <p><strong>Áo Hoodie Trùm Đầu Nỉ Nhung Stussy</strong></p>
+                     <p>Giá cũ: <del>350.000 VNĐ</del></p>
+                     <p>Giá mới: <b>299.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./somi1.jpg" >
+                     <p><strong>Áo sơ mi Dior</strong></p>
+                     <p>Giá cũ: <del>350.000 VNĐ</del></p>
+                     <p>Giá mới: <b>249.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./somi2.jpg" >
+                     <p><strong>Áo sơ mi Burberry</strong></p>
+                     <p>Giá cũ: <del>350.000 VNĐ</del></p>
+                     <p>Giá mới: <b>259.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./giay4.jpg" >
+                    <p><strong>Giày Givenchy Likeauth</strong></p>
+                     <p>Giá cũ: <del>2.999.000 VNĐ</del></p>
+                     <p>Giá mới: <b>2.499.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./giay2.jpg" >
+                     <p><strong>Giày Gabbana Likeauth</strong></p>
+                     <p>Giá cũ: <del>4.399.000 VNĐ</del></p>
+                     <p>Giá mới: <b>3.800.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./giay3.jpg" >
+                     <p><strong>Giày Gucci Likeauth</strong></p>
+                     <p>Giá cũ: <del>4.199.000 VNĐ</del></p>
+                     <p>Giá mới: <b>3.299.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./dep1.jpg" >
+                     <p><strong>Dép Hermes Rep1:1</strong></p>
+                     <p>Giá cũ: <del>1.300.000 VNĐ</del></p>
+                     <p>Giá mới: <b>999.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div class="sanpham">
+            <img src="./dep2.webp" >
+                     <p><strong>Dép Balenciaga Rep1:1</strong></p>
+                     <p>Giá cũ: <del>1.599.000 VNĐ</del></p>
+                     <p>Giá mới: <b>999.000 VNĐ</b></p>
+                     <button>Mua Ngay</button>
+                     <button>Thêm vào giỏ hàng</button>
+            </div>
+         </div>
+          
+
+</body>
+</html>
